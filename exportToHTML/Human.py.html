@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Human.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Human.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+<span class="s0">import </span><span class="s1">itertools</span>
+
+<span class="s1">df = pd.read_excel(</span><span class="s2">&quot;data.xlsx&quot;</span><span class="s0">, </span><span class="s1">header=</span><span class="s0">None, </span><span class="s1">index_col=</span><span class="s0">False, </span><span class="s1">dtype=str)</span>
+<span class="s1">df.columns = [</span><span class="s2">'A'</span><span class="s1">]</span>
+
+<span class="s1">comb = list(itertools.product(df[</span><span class="s2">'A'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">repeat=</span><span class="s3">4</span><span class="s1">))</span>
+<span class="s1">a = comb</span>
+
+<span class="s0">for </span><span class="s1">x </span><span class="s0">in </span><span class="s1">range(len(a)):</span>
+    <span class="s1">print(a[x]</span><span class="s0">, </span><span class="s1">file=open(</span><span class="s2">'comb.txt'</span><span class="s0">, </span><span class="s2">'a'</span><span class="s1">))</span>
+</pre>
+</body>
+</html>
